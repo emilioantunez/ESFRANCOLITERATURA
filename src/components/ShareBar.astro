@@ -1,0 +1,51 @@
+---
+interface Props {
+  url: string;
+  title: string;
+}
+const { url, title } = Astro.props as Props;
+const encodedUrl = encodeURIComponent(url);
+const encodedTitle = encodeURIComponent(title);
+---
+<div class="share">
+  <span>Compartir:</span>
+  <a class="share-btn x" href={`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`} target="_blank" rel="noopener noreferrer" aria-label="Compartir en X (Twitter)"><span class="icon">X</span><span class="label">X</span></a>
+  <a class="share-btn fb" href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`} target="_blank" rel="noopener noreferrer" aria-label="Compartir en Facebook"><span class="icon">f</span><span class="label">Facebook</span></a>
+  <a class="share-btn li" href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${encodedTitle}`} target="_blank" rel="noopener noreferrer" aria-label="Compartir en LinkedIn"><span class="icon">in</span><span class="label">LinkedIn</span></a>
+  <a class="share-btn wa" href={`https://wa.me/?text=${encodedTitle}%20-%20${encodedUrl}`} target="_blank" rel="noopener noreferrer" aria-label="Compartir en WhatsApp"><span class="icon">wa</span><span class="label">WhatsApp</span></a>
+  <a class="share-btn tg" href={`https://t.me/share/url?url=${encodedUrl}&text=${encodedTitle}`} target="_blank" rel="noopener noreferrer" aria-label="Compartir en Telegram"><span class="icon">tg</span><span class="label">Telegram</span></a>
+  <button class="share-btn copy" type="button" aria-label="Copiar enlace" onclick={`navigator.clipboard&&navigator.clipboard.writeText('${url}').then(()=>{this.textContent='Copiado';setTimeout(()=>this.textContent='Copiar',1500);}).catch(()=>{prompt('Copia el enlace:', '${url}')}}`}><span class="icon">⧉</span><span class="label">Copiar</span></button>
+  <button class="share-btn native" type="button" aria-label="Compartir" onclick={`if(navigator.share){navigator.share({title:'${title}',url:'${url}'}).catch(()=>{});} else {alert('Compartir no soportado por este navegador.');}`}><span class="icon">↗</span><span class="label">Compartir</span></button>
+  </div>
+
+<style>
+.share{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin-top:1rem}
+.share>span{color:var(--muted)}
+.share-btn{display:inline-flex;align-items:center;gap:.4rem;border:1px solid var(--border);background:#ffffff;color:var(--fg);padding:.45rem .65rem;border-radius:10px;font-size:.85rem;line-height:1;cursor:pointer;transition:filter .2s ease, transform .2s ease, background-color .2s ease, border-color .2s ease;text-decoration:none}
+.share-btn:hover{transform:translateY(-1px)}
+.share-btn:focus-visible{outline:2px solid rgba(15,23,42,.6);outline-offset:2px}
+/* Mini icono circular */
+.share-btn .icon{display:grid;place-items:center;width:18px;height:18px;border-radius:999px;background:#ffffff;color:currentColor;font-weight:700;font-size:.72rem;line-height:1}
+/* Etiqueta */
+.share-btn .label{font-weight:500}
+/* Botones de marca con fondo sólido para alto contraste en tema claro */
+.share-btn.x{background:#000;color:#fff;border-color:#000}
+.share-btn.fb{background:#1877F2;color:#fff;border-color:#1877F2}
+.share-btn.li{background:#0A66C2;color:#fff;border-color:#0A66C2}
+.share-btn.wa{background:#25D366;color:#fff;border-color:#25D366}
+.share-btn.tg{background:#24A1DE;color:#fff;border-color:#24A1DE}
+.share-btn.x .icon{background:#fff;color:#000}
+.share-btn.fb .icon{background:#fff;color:#1877F2}
+.share-btn.li .icon{background:#fff;color:#0A66C2}
+.share-btn.wa .icon{background:#fff;color:#1f9f50}
+.share-btn.tg .icon{background:#fff;color:#208fca}
+.share-btn.x:hover{filter:brightness(.92)}
+.share-btn.fb:hover{filter:brightness(.92)}
+.share-btn.li:hover{filter:brightness(.92)}
+.share-btn.wa:hover{filter:brightness(.92)}
+.share-btn.tg:hover{filter:brightness(.92)}
+/* Botones neutros */
+.share-btn.copy,.share-btn.native{background:#f1f5f9;color:#0f172a;border-color:#e2e8f0}
+.share-btn.copy .icon,.share-btn.native .icon{background:#fff;color:#0f172a}
+.share-btn.copy:hover,.share-btn.native:hover{background:#e2e8f0}
+</style>

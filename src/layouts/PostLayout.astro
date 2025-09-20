@@ -1,0 +1,99 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import ShareBar from "../components/ShareBar.astro";
+
+interface Props {
+  title: string;
+  description?: string;
+  date?: string; // ISO
+  tags?: string[];
+  cover?: string | null; // ruta relativa en /public
+  coverWidth?: number | string;
+  coverHeight?: number | string;
+  coverInline?: boolean; // muestra el cover como avatar a la izquierda (desktop)
+}
+
+const { title, description = '', date, tags = [], cover = null, coverWidth, coverHeight, coverInline = true } = Astro.props as Props;
+const base = import.meta.env.BASE_URL || "/";
+const site = (Astro.site ?? new URL('https://emilioantunez.github.io/ESFRANCOLITERATURA/')) as URL;
+// Construir URL absoluta respetando el base path
+const pathWithBase = `${base}${Astro.url.pathname.replace(/^\//, '')}`;
+const fullUrl = new URL(pathWithBase, site).toString();
+const og = {
+  title,
+  description,
+  url: fullUrl
+};
+---
+<BaseLayout title={title + ' | ES FRANCO LITERATURA'} description={description} schema={{
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: title,
+  description,
+  author: { '@type': 'Person', name: 'Emilio Sebastián Franco' },
+  datePublished: date ?? undefined,
+  mainEntityOfPage: fullUrl,
+  image: cover ? new URL(`${base}${(cover as string).replace(/^\//,'')}`, site).toString() : undefined
+}}>
+  <article class="post">
+    {coverInline ? (
+      <header class="post-header with-cover">
+        {cover && (
+          <img class="cover avatar" src={`${base}${cover}`} alt={title} loading="eager" width={coverWidth} height={coverHeight} />
+        )}
+        <div class="head">
+          <h1>{title}</h1>
+          {(date || tags.length) && (
+            <div class="meta">
+              {date && (<time datetime={date}>{new Date(date).toLocaleDateString('es-ES',{year:'numeric',month:'long',day:'2-digit'})}</time>)}
+              {tags.length > 0 && (<span> · {tags.join(' · ')}</span>)}
+            </div>
+          )}
+          {description && <p class="excerpt">{description}</p>}
+        </div>
+      </header>
+    ) : (
+      <>
+        {cover && (
+          <img class="cover" src={`${base}${cover}`} alt={title} loading="eager" width={coverWidth} height={coverHeight} />
+        )}
+        <header class="post-header">
+          <h1>{title}</h1>
+          {(date || tags.length) && (
+            <div class="meta">
+              {date && (<time datetime={date}>{new Date(date).toLocaleDateString('es-ES',{year:'numeric',month:'long',day:'2-digit'})}</time>)}
+              {tags.length > 0 && (<span> · {tags.join(' · ')}</span>)}
+            </div>
+          )}
+          {description && <p class="excerpt">{description}</p>}
+        </header>
+      </>
+    )}
+
+    <div class="content">
+      <slot />
+    </div>
+
+    <ShareBar url={fullUrl} title={title} />
+  </article>
+
+  <style>
+  .post{max-width:820px;margin:0 auto}
+  .cover{display:block;margin:0 auto 1rem;max-width:100%;height:auto}
+  .post-header{margin-bottom:.25rem}
+  .post-header.with-cover{display:flex;gap:1rem;align-items:flex-start}
+  .post-header.with-cover .head{flex:1 1 auto}
+  .cover.avatar{margin:0;flex:0 0 auto;width:auto;height:auto;max-width:100%}
+  @media (max-width: 640px){
+    .post-header.with-cover{flex-direction:column;align-items:center;text-align:center}
+    .cover.avatar{margin-bottom:.75rem;max-width:70vw;height:auto}
+  }
+  .post-header h1{font-size:clamp(1.9rem,3.7vw,2.7rem);margin:.5rem 0}
+  .meta{color:var(--muted);font-size:.95rem}
+  .excerpt{color:var(--muted)}
+  .content{line-height:1.85}
+  .content p{margin:1rem 0}
+  .content h2{margin-top:2rem}
+  .content blockquote{border-left:3px solid var(--border);padding:.5rem 1rem;color:#334155;background:#f1f5f9;border-radius:10px}
+  </style>
+</BaseLayout>

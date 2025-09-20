@@ -1,0 +1,21 @@
+---
+interface Item { src: string; alt: string; caption?: string }
+interface Props { items: Item[] }
+const { items } = Astro.props as Props;
+const base = import.meta.env.BASE_URL || '/';
+---
+<div class="gallery">
+  {items.map((it) => (
+    <figure>
+      <img src={`${base}${it.src.replace(/^\//,'')}`} alt={it.alt} loading="lazy" decoding="async" />
+      {it.caption && <figcaption>{it.caption}</figcaption>}
+    </figure>
+  ))}
+</div>
+
+<style>
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:1rem 0}
+.gallery figure{margin:0}
+.gallery img{width:100%;height:auto;display:block;border-radius:12px;border:1px solid #222;background:#0f0f12}
+.gallery figcaption{color:var(--muted);font-size:.85rem;margin-top:.35rem;text-align:center}
+</style>
