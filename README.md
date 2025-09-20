@@ -1,5 +1,7 @@
 # ES FRANCO LITERATURA
 
+[![Deploy to GitHub Pages](https://github.com/emilioantunez/ESFRANCOLITERATURA/actions/workflows/deploy.yml/badge.svg)](https://github.com/emilioantunez/ESFRANCOLITERATURA/actions/workflows/deploy.yml)
+
 **Autor:** Emilio Sebastián Franco  
 **Repositorio:** [ESFRANCOLITERATURA](https://github.com/emilioantunez/ESFRANCOLITERATURA.git)
 
@@ -25,6 +27,10 @@ Este blog está pensado para construirse con:
 ## 🌐 Dominio y SEO
 El blog se publicará en el subdominio asociado al repositorio:
 https://emilioantunez.github.io/ESFRANCOLITERATURA/
+
+### Despliegue
+- Producción: https://emilioantunez.github.io/ESFRANCOLITERATURA/
+- Workflow: .github/workflows/deploy.yml (deploy a GitHub Pages en push a main)
 
 
 ### Estrategia SEO
