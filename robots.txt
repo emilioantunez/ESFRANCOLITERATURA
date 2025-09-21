@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://emilioantunez.github.io/ESFRANCOLITERATURA/sitemap-index.xml
