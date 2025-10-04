@@ -6,12 +6,12 @@ interface Props {
   schema?: Record<string, any> | null;
   noindex?: boolean;
 }
-const { title = 'ES FRANCO LITERATURA - Blog de poesía, relatos y cuentos', description = 'Blog literario de Emilio Sebastián Franco. Poesía, relatos y cuentos originales con un estilo único y personal.', keywords = ['poesía','relatos','cuentos','literatura','blog literario','Emilio Sebastián Franco'], schema = {
+const { title = 'El rincón franco - La literatura desde mi verdad', description = 'La literatura desde mi verdad. Textos breves, poemas y relatos por Emilio Sebastián Franco.', keywords = ['poesía','relatos','cuentos','literatura','blog literario','Emilio Sebastián Franco'], schema = {
   '@context': 'https://schema.org',
   '@type': 'Blog',
   'url': 'https://emilioantunez.github.io/ESFRANCOLITERATURA/',
-  'name': 'ES FRANCO LITERATURA',
-  'description': 'Blog literario de poesía, relatos y cuentos por Emilio Sebastián Franco.',
+  'name': 'El rincón franco',
+  'description': 'La literatura desde mi verdad. Textos por Emilio Sebastián Franco.',
   'author': { '@type': 'Person', 'name': 'Emilio Sebastián Franco' }
 }, noindex = false } = Astro.props as Props;
 import "../styles/global.css";
@@ -30,7 +30,7 @@ const base = import.meta.env.BASE_URL || "/";
   <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
   <link rel="shortcut icon" type="image/svg+xml" href={`${base}favicon.svg`} />
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="ES FRANCO LITERATURA" />
+  <meta property="og:site_name" content="El rincón franco" />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:url" content="https://emilioantunez.github.io/ESFRANCOLITERATURA/" />
@@ -42,8 +42,13 @@ const base = import.meta.env.BASE_URL || "/";
   <body>
     <header class="header container">
   <div class="brand"><a href={base} aria-label="Ir al inicio">
-    <img src={`${base}imagenes/franco.png`} alt="ES FRANCO LITERATURA" />
-  </a></div>
+    <img src={`${base}imagenes/franco.png`} alt="El rincón franco" />
+  </a>
+  <div class="brand-text">
+    <h1 class="brand-title">El rincón franco</h1>
+    <p class="brand-sub">La literatura desde mi verdad</p>
+  </div>
+  </div>
   <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menú</button>
   <nav id="site-nav" class="nav" data-open="false">
         <a href={`${base}poesia/`}>Poesía</a>
@@ -55,7 +60,7 @@ const base = import.meta.env.BASE_URL || "/";
       <slot />
     </main>
     <footer class="footer container">
-      © {new Date().getFullYear()} Emilio Sebastián Franco — ES FRANCO LITERATURA
+      © {new Date().getFullYear()} Emilio Sebastián Franco — El rincón franco
     </footer>
     <script is:inline>
       (function(){

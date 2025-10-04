@@ -1,4 +1,4 @@
-# ES FRANCO LITERATURA
+# El rincón franco
 
 [![Deploy to GitHub Pages](https://github.com/emilioantunez/ESFRANCOLITERATURA/actions/workflows/deploy.yml/badge.svg)](https://github.com/emilioantunez/ESFRANCOLITERATURA/actions/workflows/deploy.yml)
 
@@ -8,8 +8,8 @@
 ---
 
 ## ✨ Sobre el proyecto
-**ES FRANCO LITERATURA** es un blog literario dedicado a la **poesía, relatos y cuentos**.  
-Escrito bajo el seudónimo **Emilio Sebastián Franco**, este espacio busca compartir textos originales que exploran la sensibilidad, la imaginación y la fuerza narrativa.
+**El rincón franco** es un blog literario dedicado a la **poesía, relatos y cuentos**.  
+La literatura desde mi verdad. Escrito por **Emilio Sebastián Franco**, este espacio comparte textos originales que exploran sensibilidad, imaginación y verdad personal.
 
 El proyecto tiene como objetivo crear un lugar íntimo y creativo donde los lectores puedan sumergirse en la palabra escrita, al mismo tiempo que se optimiza su visibilidad en la web.
 
@@ -43,7 +43,7 @@ Ejemplo de snippet HTML para SEO:
 
 ```html
 <head>
-  <title>ES FRANCO LITERATURA - Blog de poesía, relatos y cuentos</title>
+  <title>El rincón franco - La literatura desde mi verdad</title>
   <meta name="description" content="Blog literario de Emilio Sebastián Franco. Poesía, relatos y cuentos originales con un estilo único y personal.">
   <meta name="keywords" content="poesía, relatos, cuentos, literatura, blog literario, Emilio Sebastián Franco">
   <meta name="author" content="Emilio Sebastián Franco">
@@ -54,8 +54,8 @@ SCHEMA: <script type="application/ld+json">
   "@context": "https://schema.org",
   "@type": "Blog",
   "url": "https://emilioantunez.github.io/ESFRANCOLITERATURA/",
-  "name": "ES FRANCO LITERATURA",
-  "description": "Blog literario de poesía, relatos y cuentos por Emilio Sebastián Franco.",
+  "name": "El rincón franco",
+  "description": "La literatura desde mi verdad. Textos por Emilio Sebastián Franco.",
   "author": {
     "@type": "Person",
     "name": "Emilio Sebastián Franco"
