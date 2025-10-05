@@ -15,7 +15,7 @@ interface Props {
 
 const { title, description = '', date, tags = [], cover = null, coverWidth, coverHeight, coverInline = true } = Astro.props as Props;
 const base = import.meta.env.BASE_URL || "/";
-const site = (Astro.site ?? new URL('https://emilioantunez.github.io/ESFRANCOLITERATURA/')) as URL;
+const site = (Astro.site ?? new URL('https://emilioantunez.github.io/elrinconfranco/')) as URL;
 // Construir URL absoluta respetando el base path
 const pathWithBase = `${base}${Astro.url.pathname.replace(/^\//, '')}`;
 const fullUrl = new URL(pathWithBase, site).toString();

@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://emilioantunez.github.io/ESFRANCOLITERATURA/sitemap-index.xml
+Sitemap: https://emilioantunez.github.io/elrinconfranco/sitemap-index.xml

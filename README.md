@@ -1,7 +1,6 @@
 # El rincón franco
 
 [![Deploy (pages)](https://github.com/emilioantunez/elrinconfranco/actions/workflows/deploy.yml/badge.svg)](https://github.com/emilioantunez/elrinconfranco/actions/workflows/deploy.yml)
-[![Deploy (gh-pages fallback)](https://github.com/emilioantunez/elrinconfranco/actions/workflows/deploy-branch.yml/badge.svg)](https://github.com/emilioantunez/elrinconfranco/actions/workflows/deploy-branch.yml)
 
 **Autor:** Emilio Sebastián Franco  
 **Repositorio:** [elrinconfranco](https://github.com/emilioantunez/elrinconfranco.git)

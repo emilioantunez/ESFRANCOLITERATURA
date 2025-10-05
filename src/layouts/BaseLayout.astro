@@ -9,7 +9,7 @@ interface Props {
 const { title = 'El rincón franco - La literatura desde mi verdad', description = 'La literatura desde mi verdad. Textos breves, poemas y relatos por Emilio Sebastián Franco.', keywords = ['poesía','relatos','cuentos','literatura','blog literario','Emilio Sebastián Franco'], schema = {
   '@context': 'https://schema.org',
   '@type': 'Blog',
-  'url': 'https://emilioantunez.github.io/ESFRANCOLITERATURA/',
+  'url': 'https://emilioantunez.github.io/elrinconfranco/',
   'name': 'El rincón franco',
   'description': 'La literatura desde mi verdad. Textos por Emilio Sebastián Franco.',
   'author': { '@type': 'Person', 'name': 'Emilio Sebastián Franco' }
@@ -33,7 +33,7 @@ const base = import.meta.env.BASE_URL || "/";
   <meta property="og:site_name" content="El rincón franco" />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
-  <meta property="og:url" content="https://emilioantunez.github.io/ESFRANCOLITERATURA/" />
+  <meta property="og:url" content="https://emilioantunez.github.io/elrinconfranco/" />
   <meta name="twitter:card" content="summary" />
     {schema && (
       <script type="application/ld+json">{JSON.stringify(schema)}</script>

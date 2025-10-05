@@ -3,8 +3,8 @@ import sitemap from '@astrojs/sitemap';
 
 // Configuración para GitHub Pages: base del repo y URL del sitio
 export default defineConfig({
-  site: 'https://emilioantunez.github.io/ESFRANCOLITERATURA/',
-  base: '/ESFRANCOLITERATURA',
+  site: 'https://emilioantunez.github.io/elrinconfranco/',
+  base: '/elrinconfranco',
   output: 'static',
   trailingSlash: 'always',
   integrations: [
