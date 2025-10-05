@@ -1,9 +1,10 @@
 # El rincón franco
 
-[![Deploy to GitHub Pages](https://github.com/emilioantunez/ESFRANCOLITERATURA/actions/workflows/deploy.yml/badge.svg)](https://github.com/emilioantunez/ESFRANCOLITERATURA/actions/workflows/deploy.yml)
+[![Deploy (pages)](https://github.com/emilioantunez/elrinconfranco/actions/workflows/deploy.yml/badge.svg)](https://github.com/emilioantunez/elrinconfranco/actions/workflows/deploy.yml)
+[![Deploy (gh-pages fallback)](https://github.com/emilioantunez/elrinconfranco/actions/workflows/deploy-branch.yml/badge.svg)](https://github.com/emilioantunez/elrinconfranco/actions/workflows/deploy-branch.yml)
 
 **Autor:** Emilio Sebastián Franco  
-**Repositorio:** [ESFRANCOLITERATURA](https://github.com/emilioantunez/ESFRANCOLITERATURA.git)
+**Repositorio:** [elrinconfranco](https://github.com/emilioantunez/elrinconfranco.git)
 
 ---
 
@@ -26,10 +27,10 @@ Este blog está pensado para construirse con:
 
 ## 🌐 Dominio y SEO
 El blog se publicará en el subdominio asociado al repositorio:
-https://emilioantunez.github.io/ESFRANCOLITERATURA/
+https://emilioantunez.github.io/elrinconfranco/
 
 ### Despliegue
-- Producción: https://emilioantunez.github.io/ESFRANCOLITERATURA/
+- Producción: https://emilioantunez.github.io/elrinconfranco/
 - Workflow: .github/workflows/deploy.yml (deploy a GitHub Pages en push a main)
 
 
@@ -53,7 +54,7 @@ SCHEMA: <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Blog",
-  "url": "https://emilioantunez.github.io/ESFRANCOLITERATURA/",
+  "url": "https://emilioantunez.github.io/elrinconfranco/",
   "name": "El rincón franco",
   "description": "La literatura desde mi verdad. Textos por Emilio Sebastián Franco.",
   "author": {
